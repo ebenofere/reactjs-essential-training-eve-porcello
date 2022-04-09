@@ -1,4 +1,5 @@
 import "./App.css";
+import restaurant from "./restaurant.jpg";
 
 function Header({ name }) {
   return (
@@ -12,6 +13,15 @@ function Main({ adjective, dishes }) {
   return (
     <section>
       <p>We serve the most {adjective} food around</p>
+      <img
+        src={restaurant}
+        height={200}
+        alt="napkin and silverware at a restaurant table"
+      />
+      {/* <img
+        src="https://res.cloudinary.com/ebenofere/image/upload/v1630338291/passport_a4f5uc.jpg"
+        height={200}
+      /> */}
       <ul style={{ textAlign: "left" }}>
         {dishes.map((dish) => (
           <li key={dish.id}>{dish.title}</li>
@@ -32,6 +42,7 @@ function Footer({ year }) {
 const dishes = ["Macaroni and Cheese", "Salmon", "Tofu with Vegetables"];
 
 const dishObjects = dishes.map((dish, i) => ({ id: i, title: dish }));
+
 console.log(dishObjects, "dishObjects");
 
 function App() {
