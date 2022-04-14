@@ -21,6 +21,7 @@ function Main({ adjective, dishes }) {
       {/* <img
         src="https://res.cloudinary.com/ebenofere/image/upload/v1630338291/passport_a4f5uc.jpg"
         height={200}
+        alt="napkin and silverware at a restaurant table"
       /> */}
       <ul style={{ textAlign: "left" }}>
         {dishes.map((dish) => (
@@ -39,7 +40,13 @@ function Footer({ year }) {
   );
 }
 
-const dishes = ["Macaroni and Cheese", "Salmon", "Tofu with Vegetables"];
+const dishes = [
+  "Macaroni and Cheese",
+  "Salmon",
+  "Tofu with Vegetables",
+  "Beans and Yam",
+  "Amala, Gbegiri, Ewedu, and Eran Ogufe",
+];
 
 const dishObjects = dishes.map((dish, i) => ({ id: i, title: dish }));
 
