@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
-function SecretComponent() {
-  return <h1>Secret information for authorized users only</h1>;
-}
+function App() {
+  const [emotion, setEmotion] = useState("happy");
 
-function RegularComponent() {
-  return <h1>Everyone can see this component.</h1>;
-}
+  return (
+    <>
+      <h1>Current emotion is {emotion}</h1>
 
-function App({ authorized }) {
-  return <>{authorized ? <RegularComponent /> : <SecretComponent />}</>;
+      <button onClick={() => setEmotion("happy")}>Happy</button>
+      <button onClick={() => setEmotion("frustrated")}>Frustrated</button>
+      <button onClick={() => setEmotion("enthusiastic")}>Enthused</button>
+    </>
+  );
 }
 
 export default App;
-
-//check the index file. that's where the work is
