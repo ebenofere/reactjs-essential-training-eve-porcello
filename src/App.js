@@ -9,16 +9,10 @@ function RegularComponent() {
   return <h1>Everyone can see this component.</h1>;
 }
 
-// function App(props) {
-//   if (props.authorized) {
-//     return <SecretComponent />;
-//   } else {
-//     return <RegularComponent />;
-//   }
-// }
-
-function App(props) {
-  return <>{props.authorized ? <RegularComponent /> : <SecretComponent />}</>;
+function App({ authorized }) {
+  return <>{authorized ? <RegularComponent /> : <SecretComponent />}</>;
 }
 
 export default App;
+
+//check the index file. that's where the work is
