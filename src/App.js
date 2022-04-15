@@ -1,29 +1,57 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState } from "react";
+// import "./App.css";
+
+// function App() {
+//   const [checked, setChecked] = useState(false);
+
+//   return (
+//     <>
+//       <input
+//         type="checkbox"
+//         value={checked}
+//         onChange={() => setChecked((checked) => !checked)}
+//       />
+//       <p>{checked ? "checked" : "not checked"}</p>
+//     </>
+//   );
+// }
+
+// export default App;
+
+/************************************** SECOND LESSON ***************************************/
+
+// import React, { useState } from "react";
+// import "./App.css";
+
+// function App() {
+//   const [checked, setChecked] = useState(false);
+
+//   function toggle() {
+//     setChecked((checked) => !checked);
+//   }
+
+//   return (
+//     <>
+//       <input type="checkbox" value={checked} onChange={toggle} />
+//       <p>{checked ? "checked" : "not checked"}</p>
+//     </>
+//   );
+// }
+
+// export default App;
+
+/************************************** THIRD LESSON (using useReducer) ***************************************/
+
+import React, { useReducer, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [primary, setPrimary] = useState("happy");
-  const [secondary, setSecondary] = useState("tired");
-
-  useEffect(() => {
-    console.log(`He said he feels ${primary}`);
-  }, [primary]);
-
-  useEffect(() => {
-    console.log(`But i don't understand why he also feels ${secondary}`);
-  }, [secondary]);
+  const [checked, toggle] = useReducer((checked) => !checked, false);
 
   return (
     <>
-      <h1>
-        Right now, Eben is <i>{primary}</i> but also <i>{secondary}</i>
-      </h1>
-
-      <button onClick={() => setPrimary("happy")}>Happy</button>
-      <button onClick={() => setSecondary("crabby")}>Make Crabby</button>
-      <button onClick={() => setSecondary("awkward")}>Awkward</button>
-      <button onClick={() => setPrimary("frustrated")}>Frustrated</button>
-      <button onClick={() => setPrimary("enthusiastic")}>Enthused</button>
+      <input type="checkbox" value={checked} onChange={toggle} />
+      <p>{checked ? "checked" : "not checked"}</p>
     </>
   );
 }
