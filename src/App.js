@@ -1,7 +1,15 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Home, About, Events, Contact, Whoops404 } from "./pages";
+import {
+  Home,
+  About,
+  Services,
+  CompanyHistory,
+  Location,
+  Contact,
+  Whoops404,
+} from "./pages";
 
 function App() {
   return (
@@ -9,8 +17,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/events" element={<Events />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/history" element={<CompanyHistory />} />
+        <Route path="/location" element={<Location />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/companyhistory" element={<CompanyHistory />} />
         <Route path="*" element={<Whoops404 />} />
       </Routes>
     </div>

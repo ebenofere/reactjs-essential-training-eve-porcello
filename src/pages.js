@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, Outlet } from "react-router-dom";
 
 /* ----------- Installing React Router 6 ----------- */
 // npm install react-router@next react-router-dom@next
@@ -23,22 +23,31 @@ export function About() {
   return (
     <div>
       <h1>[About]</h1>
+      <Outlet />
     </div>
   );
 }
 
-export function Events() {
+export function Services() {
   return (
     <div>
-      <h1>[Events]</h1>
+      <h2>Our Services</h2>
     </div>
   );
 }
 
-export function Contact() {
+export function CompanyHistory() {
   return (
     <div>
-      <h1>[Contact]</h1>
+      <h2>Our Company History</h2>
+    </div>
+  );
+}
+
+export function Location() {
+  return (
+    <div>
+      <h2>Our Location</h2>
     </div>
   );
 }
